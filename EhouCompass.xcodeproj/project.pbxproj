@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F58F2BF1C47DEA800542E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2BE1C47DEA800542E34 /* AppDelegate.swift */; };
+		8F58F2C11C47DEA800542E34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2C01C47DEA800542E34 /* ViewController.swift */; };
+		8F58F2C41C47DEA800542E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F58F2C21C47DEA800542E34 /* Main.storyboard */; };
+		8F58F2C61C47DEA800542E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F58F2C51C47DEA800542E34 /* Assets.xcassets */; };
+		8F58F2C91C47DEA800542E34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F58F2C71C47DEA800542E34 /* LaunchScreen.storyboard */; };
+		8F58F2D41C47DEA900542E34 /* EhouCompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2D31C47DEA900542E34 /* EhouCompassTests.swift */; };
+		8F58F2DF1C47DEA900542E34 /* EhouCompassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2DE1C47DEA900542E34 /* EhouCompassUITests.swift */; };
+		8F58F2ED1C47E10200542E34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F58F2EC1C47E10100542E34 /* CoreLocation.framework */; };
+		8F58F2F01C47E80B00542E34 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2EF1C47E80B00542E34 /* Empty.m */; };
+		F82287630609FB2B22459D10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1155CE58F07FC81DA18F0E6F /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F58F2D01C47DEA900542E34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F58F2B31C47DEA800542E34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F58F2BA1C47DEA800542E34;
+			remoteInfo = EhouCompass;
+		};
+		8F58F2DB1C47DEA900542E34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F58F2B31C47DEA800542E34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F58F2BA1C47DEA800542E34;
+			remoteInfo = EhouCompass;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1155CE58F07FC81DA18F0E6F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F5F1CA2CE505F0758756D3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8F58F2BB1C47DEA800542E34 /* EhouCompass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EhouCompass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F58F2BE1C47DEA800542E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8F58F2C01C47DEA800542E34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8F58F2C31C47DEA800542E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8F58F2C51C47DEA800542E34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F58F2C81C47DEA800542E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F58F2CA1C47DEA800542E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F58F2CF1C47DEA900542E34 /* EhouCompassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EhouCompassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F58F2D31C47DEA900542E34 /* EhouCompassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EhouCompassTests.swift; sourceTree = "<group>"; };
+		8F58F2D51C47DEA900542E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F58F2DA1C47DEA900542E34 /* EhouCompassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EhouCompassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F58F2DE1C47DEA900542E34 /* EhouCompassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EhouCompassUITests.swift; sourceTree = "<group>"; };
+		8F58F2E01C47DEA900542E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F58F2EC1C47E10100542E34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8F58F2EE1C47E80B00542E34 /* EhouCompass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EhouCompass-Bridging-Header.h"; sourceTree = "<group>"; };
+		8F58F2EF1C47E80B00542E34 /* Empty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
+		AED3C951D1D4C6180F75326A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F58F2B81C47DEA800542E34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F58F2ED1C47E10200542E34 /* CoreLocation.framework in Frameworks */,
+				F82287630609FB2B22459D10 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F58F2CC1C47DEA900542E34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F58F2D71C47DEA900542E34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		73017F85B43A4AE4E3A14D39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1155CE58F07FC81DA18F0E6F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F58F2B21C47DEA800542E34 = {
+			isa = PBXGroup;
+			children = (
+				8F58F2EC1C47E10100542E34 /* CoreLocation.framework */,
+				8F58F2BD1C47DEA800542E34 /* EhouCompass */,
+				8F58F2D21C47DEA900542E34 /* EhouCompassTests */,
+				8F58F2DD1C47DEA900542E34 /* EhouCompassUITests */,
+				8F58F2BC1C47DEA800542E34 /* Products */,
+				BEE650789D2EFBEEEF589D5C /* Pods */,
+				73017F85B43A4AE4E3A14D39 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8F58F2BC1C47DEA800542E34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F58F2BB1C47DEA800542E34 /* EhouCompass.app */,
+				8F58F2CF1C47DEA900542E34 /* EhouCompassTests.xctest */,
+				8F58F2DA1C47DEA900542E34 /* EhouCompassUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F58F2BD1C47DEA800542E34 /* EhouCompass */ = {
+			isa = PBXGroup;
+			children = (
+				8F58F2BE1C47DEA800542E34 /* AppDelegate.swift */,
+				8F58F2C01C47DEA800542E34 /* ViewController.swift */,
+				8F58F2C21C47DEA800542E34 /* Main.storyboard */,
+				8F58F2C51C47DEA800542E34 /* Assets.xcassets */,
+				8F58F2C71C47DEA800542E34 /* LaunchScreen.storyboard */,
+				8F58F2CA1C47DEA800542E34 /* Info.plist */,
+				8F58F2EF1C47E80B00542E34 /* Empty.m */,
+				8F58F2EE1C47E80B00542E34 /* EhouCompass-Bridging-Header.h */,
+			);
+			path = EhouCompass;
+			sourceTree = "<group>";
+		};
+		8F58F2D21C47DEA900542E34 /* EhouCompassTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F58F2D31C47DEA900542E34 /* EhouCompassTests.swift */,
+				8F58F2D51C47DEA900542E34 /* Info.plist */,
+			);
+			path = EhouCompassTests;
+			sourceTree = "<group>";
+		};
+		8F58F2DD1C47DEA900542E34 /* EhouCompassUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8F58F2DE1C47DEA900542E34 /* EhouCompassUITests.swift */,
+				8F58F2E01C47DEA900542E34 /* Info.plist */,
+			);
+			path = EhouCompassUITests;
+			sourceTree = "<group>";
+		};
+		BEE650789D2EFBEEEF589D5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F5F1CA2CE505F0758756D3A /* Pods.debug.xcconfig */,
+				AED3C951D1D4C6180F75326A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F58F2BA1C47DEA800542E34 /* EhouCompass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F58F2E31C47DEA900542E34 /* Build configuration list for PBXNativeTarget "EhouCompass" */;
+			buildPhases = (
+				E02D7854D992454052E305C2 /* Check Pods Manifest.lock */,
+				8F58F2B71C47DEA800542E34 /* Sources */,
+				8F58F2B81C47DEA800542E34 /* Frameworks */,
+				8F58F2B91C47DEA800542E34 /* Resources */,
+				8DE3C62F5385B9D3D6D0C5F6 /* Embed Pods Frameworks */,
+				D50259B0B501E5E6911E5578 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EhouCompass;
+			productName = EhouCompass;
+			productReference = 8F58F2BB1C47DEA800542E34 /* EhouCompass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F58F2CE1C47DEA900542E34 /* EhouCompassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F58F2E61C47DEA900542E34 /* Build configuration list for PBXNativeTarget "EhouCompassTests" */;
+			buildPhases = (
+				8F58F2CB1C47DEA900542E34 /* Sources */,
+				8F58F2CC1C47DEA900542E34 /* Frameworks */,
+				8F58F2CD1C47DEA900542E34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F58F2D11C47DEA900542E34 /* PBXTargetDependency */,
+			);
+			name = EhouCompassTests;
+			productName = EhouCompassTests;
+			productReference = 8F58F2CF1C47DEA900542E34 /* EhouCompassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8F58F2D91C47DEA900542E34 /* EhouCompassUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F58F2E91C47DEA900542E34 /* Build configuration list for PBXNativeTarget "EhouCompassUITests" */;
+			buildPhases = (
+				8F58F2D61C47DEA900542E34 /* Sources */,
+				8F58F2D71C47DEA900542E34 /* Frameworks */,
+				8F58F2D81C47DEA900542E34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F58F2DC1C47DEA900542E34 /* PBXTargetDependency */,
+			);
+			name = EhouCompassUITests;
+			productName = EhouCompassUITests;
+			productReference = 8F58F2DA1C47DEA900542E34 /* EhouCompassUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F58F2B31C47DEA800542E34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Toshiki Chiba";
+				TargetAttributes = {
+					8F58F2BA1C47DEA800542E34 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = AVWWV46Y77;
+					};
+					8F58F2CE1C47DEA900542E34 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 8F58F2BA1C47DEA800542E34;
+					};
+					8F58F2D91C47DEA900542E34 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 8F58F2BA1C47DEA800542E34;
+					};
+				};
+			};
+			buildConfigurationList = 8F58F2B61C47DEA800542E34 /* Build configuration list for PBXProject "EhouCompass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F58F2B21C47DEA800542E34;
+			productRefGroup = 8F58F2BC1C47DEA800542E34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F58F2BA1C47DEA800542E34 /* EhouCompass */,
+				8F58F2CE1C47DEA900542E34 /* EhouCompassTests */,
+				8F58F2D91C47DEA900542E34 /* EhouCompassUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F58F2B91C47DEA800542E34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F58F2C91C47DEA800542E34 /* LaunchScreen.storyboard in Resources */,
+				8F58F2C61C47DEA800542E34 /* Assets.xcassets in Resources */,
+				8F58F2C41C47DEA800542E34 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F58F2CD1C47DEA900542E34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F58F2D81C47DEA900542E34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8DE3C62F5385B9D3D6D0C5F6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D50259B0B501E5E6911E5578 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E02D7854D992454052E305C2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F58F2B71C47DEA800542E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F58F2F01C47E80B00542E34 /* Empty.m in Sources */,
+				8F58F2C11C47DEA800542E34 /* ViewController.swift in Sources */,
+				8F58F2BF1C47DEA800542E34 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F58F2CB1C47DEA900542E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F58F2D41C47DEA900542E34 /* EhouCompassTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F58F2D61C47DEA900542E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F58F2DF1C47DEA900542E34 /* EhouCompassUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F58F2D11C47DEA900542E34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F58F2BA1C47DEA800542E34 /* EhouCompass */;
+			targetProxy = 8F58F2D01C47DEA900542E34 /* PBXContainerItemProxy */;
+		};
+		8F58F2DC1C47DEA900542E34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F58F2BA1C47DEA800542E34 /* EhouCompass */;
+			targetProxy = 8F58F2DB1C47DEA900542E34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F58F2C21C47DEA800542E34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F58F2C31C47DEA800542E34 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8F58F2C71C47DEA800542E34 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F58F2C81C47DEA800542E34 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F58F2E11C47DEA900542E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F58F2E21C47DEA900542E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F58F2E41C47DEA900542E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F5F1CA2CE505F0758756D3A /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = EhouCompass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EhouCompass/EhouCompass-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F58F2E51C47DEA900542E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AED3C951D1D4C6180F75326A /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = EhouCompass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EhouCompass/EhouCompass-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		8F58F2E71C47DEA900542E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EhouCompassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EhouCompass.app/EhouCompass";
+			};
+			name = Debug;
+		};
+		8F58F2E81C47DEA900542E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EhouCompassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EhouCompass.app/EhouCompass";
+			};
+			name = Release;
+		};
+		8F58F2EA1C47DEA900542E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EhouCompassUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompassUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EhouCompass;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		8F58F2EB1C47DEA900542E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EhouCompassUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompassUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EhouCompass;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F58F2B61C47DEA800542E34 /* Build configuration list for PBXProject "EhouCompass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F58F2E11C47DEA900542E34 /* Debug */,
+				8F58F2E21C47DEA900542E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F58F2E31C47DEA900542E34 /* Build configuration list for PBXNativeTarget "EhouCompass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F58F2E41C47DEA900542E34 /* Debug */,
+				8F58F2E51C47DEA900542E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F58F2E61C47DEA900542E34 /* Build configuration list for PBXNativeTarget "EhouCompassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F58F2E71C47DEA900542E34 /* Debug */,
+				8F58F2E81C47DEA900542E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F58F2E91C47DEA900542E34 /* Build configuration list for PBXNativeTarget "EhouCompassUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F58F2EA1C47DEA900542E34 /* Debug */,
+				8F58F2EB1C47DEA900542E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F58F2B31C47DEA800542E34 /* Project object */;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-EhouCompass.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-EhouCompassTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-EhouCompassUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0CA99939675D4280D1FC3372D71C7E66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1469924FC52F60B0068FA24EEFCB3EFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B961369FD1AF3400F25E71F0F0B6695</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0B94AA2F14C0FAFA8BE0F30E3924609</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

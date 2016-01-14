@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E1D47219ED007333732EA07E36D2636 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		6E579FF358AF2261C8682A7FA383EAA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		8CE4DFE8680F4B5A147D0B8B0D749549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		9A9BA352730FA6598DCF5B6E253D4141 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		B991A49F4C12A4F8462C02B69D83DB11 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CCF5A4B67154A81CC2040036FE427E /* Pods-dummy.m */; };
+		D99F47ECC9458662E68CA984D88D47F3 /* Pods-EhouCompass-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE057DF8051C8E9063EEF174CA4F13 /* Pods-EhouCompass-dummy.m */; };
+		E458A36329EAE4FD596A7D56CE94256D /* Pods-EhouCompassUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA50C9F1F1FA54C87AC58068A00EE0 /* Pods-EhouCompassUITests-dummy.m */; };
+		E931371307A1B9F2D0D93A7106497986 /* Pods-EhouCompassTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F298F5426579E15B3D68BB5ACA744 /* Pods-EhouCompassTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		022CE31B065EEC35E6FF1BEEED3E8D25 /* Pods-EhouCompass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EhouCompass.debug.xcconfig"; sourceTree = "<group>"; };
+		06A9865A0B5291EC7418D52E58CEAD1B /* Pods-EhouCompass-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EhouCompass-acknowledgements.plist"; sourceTree = "<group>"; };
+		06FB71905AD09CA31880501DF5DB2447 /* Pods-EhouCompassUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EhouCompassUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F987D5D6C2F115CE996AA94038DDB53 /* Pods-EhouCompassTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EhouCompassTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1E55E9A2C2DEA7943F9C899937D5E4AA /* Pods-EhouCompassUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EhouCompassUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		247F46E189312A81044ADB419272D976 /* Pods-EhouCompassTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EhouCompassTests.release.xcconfig"; sourceTree = "<group>"; };
+		2EB74253ACDA8C524D6EB35A324684FB /* Pods-EhouCompass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EhouCompass.release.xcconfig"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3EF9BD8C46BE68121FF002BCE54D8615 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		411ABFE5E2BA8E92143F01A3D974FA3D /* NADNativeTableViewHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeTableViewHelper.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeTableViewHelper.h"; sourceTree = "<group>"; };
+		4927C67B6FF3092EB94A47DDF9B74DD7 /* Pods-EhouCompassUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EhouCompassUITests-frameworks.sh"; sourceTree = "<group>"; };
+		5825E18C257E5D03FAB30D929BE13F54 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		5CE32DB95319A9A9BBA4E94571EE251B /* NADNative.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNative.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNative.h"; sourceTree = "<group>"; };
+		5FB4CB5CDDE67E07E11FB7A84E2B6B9C /* NADInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADInterstitial.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADInterstitial.h"; sourceTree = "<group>"; };
+		7003841E44053E8C403196BC2A0B02D3 /* NADView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADView.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADView.h"; sourceTree = "<group>"; };
+		72A3E6DC87D6960AB9647190BB463938 /* NADNativeLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeLogger.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeLogger.h"; sourceTree = "<group>"; };
+		7C53F7E32B5676C40B8D2F2ECB8AB9D1 /* Pods-EhouCompassUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EhouCompassUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7CAA50C9F1F1FA54C87AC58068A00EE0 /* Pods-EhouCompassUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EhouCompassUITests-dummy.m"; sourceTree = "<group>"; };
+		7D2AC3BC8E3688D11698BC6A3A122967 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		8C98B298731BD962EABDD152141B472E /* libPods-EhouCompassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EhouCompassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		913EE4FAAA32D6B8E7E7D824FEA47781 /* NADNativeClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeClient.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeClient.h"; sourceTree = "<group>"; };
+		930ED4DBEA0F669EBC8CA568A53A0074 /* Pods-EhouCompass-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EhouCompass-resources.sh"; sourceTree = "<group>"; };
+		9DE11330B382AC621542A7AD5BAA65CF /* NADNativeImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeImageView.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeImageView.h"; sourceTree = "<group>"; };
+		9DE15640BE209BFE7E3E64BA0C153579 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		A57DA85E0154BE6CC14D7BED475DD706 /* libNendAd.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libNendAd.a; path = "NendSDK_iOS-3.0.2/Nend/NendAd/libNendAd.a"; sourceTree = "<group>"; };
+		ADDE057DF8051C8E9063EEF174CA4F13 /* Pods-EhouCompass-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EhouCompass-dummy.m"; sourceTree = "<group>"; };
+		AE0F298F5426579E15B3D68BB5ACA744 /* Pods-EhouCompassTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EhouCompassTests-dummy.m"; sourceTree = "<group>"; };
+		AF366AA01C0969681CD11309BF4CF0E3 /* Pods-EhouCompassTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EhouCompassTests-frameworks.sh"; sourceTree = "<group>"; };
+		B0CCF5A4B67154A81CC2040036FE427E /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		B2147FFEBA10ABB65462398DEDEC0A15 /* Pods-EhouCompassTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EhouCompassTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B27E9742E84DD0B991BA4E08E52578C0 /* libPods-EhouCompass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EhouCompass.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91F81892BA9431DEAF3AF9737626B04 /* NADNativeError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeError.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeError.h"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C74F4DBF7943A4D3C1C07D9D232017AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFB995D88640A69BA5B69515715F4FF /* Pods-EhouCompassTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EhouCompassTests-resources.sh"; sourceTree = "<group>"; };
+		DA02A2B0353D11007AA9E2AB4DCCF019 /* libPods-EhouCompassUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EhouCompassUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2BD75B9CD45351072EA35331D8F4EA /* Pods-EhouCompass-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EhouCompass-frameworks.sh"; sourceTree = "<group>"; };
+		E504938060AB52EF95F5A77CE26AD016 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		E64C2EC79487992707436D079974EA35 /* NADNativeTableViewPlacement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeTableViewPlacement.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeTableViewPlacement.h"; sourceTree = "<group>"; };
+		EC839B941A19FC4EA846ED47B68F621C /* Pods-EhouCompassUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EhouCompassUITests-resources.sh"; sourceTree = "<group>"; };
+		ED4D70EB4C3F57448680CE76C24026EF /* NADNativeLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeLabel.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeLabel.h"; sourceTree = "<group>"; };
+		EF332BBA1DCA4EF5D8169EB71C09B1FD /* Pods-EhouCompassTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EhouCompassTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F04270A2989484E650A2E3464E8A1E60 /* Pods-EhouCompass-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EhouCompass-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F0C60903F9E4016424BF037B5D673898 /* Pods-EhouCompassUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EhouCompassUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FD994F9BD7853BF24B4CD772ED6247E4 /* NADNativeViewRendering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADNativeViewRendering.h; path = "NendSDK_iOS-3.0.2/Nend/NendAd/NADNativeViewRendering.h"; sourceTree = "<group>"; };
+		FEBD1C51247F6733522C8BA1690AEF53 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E78C4AC537A1782BCFD134B2B8940E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E579FF358AF2261C8682A7FA383EAA6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F4DAE99FBB15190E0810EFAEFF661BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE4DFE8680F4B5A147D0B8B0D749549 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C094D724A7AB8892C78E13B2696F04D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E1D47219ED007333732EA07E36D2636 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A908B43E23174AF8BF4AF3248AE4BE09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A9BA352730FA6598DCF5B6E253D4141 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		189BD58815D8A5DE5A74E54EABDB3798 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C74F4DBF7943A4D3C1C07D9D232017AE /* libPods.a */,
+				B27E9742E84DD0B991BA4E08E52578C0 /* libPods-EhouCompass.a */,
+				8C98B298731BD962EABDD152141B472E /* libPods-EhouCompassTests.a */,
+				DA02A2B0353D11007AA9E2AB4DCCF019 /* libPods-EhouCompassUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A46619E7245122866FF3A05077A5EC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A57DA85E0154BE6CC14D7BED475DD706 /* libNendAd.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C54A2C04F0A5BB2E0FBABF17CEDBF8C /* NendSDK_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5FB4CB5CDDE67E07E11FB7A84E2B6B9C /* NADInterstitial.h */,
+				5CE32DB95319A9A9BBA4E94571EE251B /* NADNative.h */,
+				913EE4FAAA32D6B8E7E7D824FEA47781 /* NADNativeClient.h */,
+				B91F81892BA9431DEAF3AF9737626B04 /* NADNativeError.h */,
+				9DE11330B382AC621542A7AD5BAA65CF /* NADNativeImageView.h */,
+				ED4D70EB4C3F57448680CE76C24026EF /* NADNativeLabel.h */,
+				72A3E6DC87D6960AB9647190BB463938 /* NADNativeLogger.h */,
+				411ABFE5E2BA8E92143F01A3D974FA3D /* NADNativeTableViewHelper.h */,
+				E64C2EC79487992707436D079974EA35 /* NADNativeTableViewPlacement.h */,
+				FD994F9BD7853BF24B4CD772ED6247E4 /* NADNativeViewRendering.h */,
+				7003841E44053E8C403196BC2A0B02D3 /* NADView.h */,
+				4A46619E7245122866FF3A05077A5EC9 /* Frameworks */,
+			);
+			path = NendSDK_iOS;
+			sourceTree = "<group>";
+		};
+		69E3A9997CC0B6206A0652B2FFC0AE6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EF9BD8C46BE68121FF002BCE54D8615 /* Pods-acknowledgements.markdown */,
+				FEBD1C51247F6733522C8BA1690AEF53 /* Pods-acknowledgements.plist */,
+				B0CCF5A4B67154A81CC2040036FE427E /* Pods-dummy.m */,
+				E504938060AB52EF95F5A77CE26AD016 /* Pods-frameworks.sh */,
+				9DE15640BE209BFE7E3E64BA0C153579 /* Pods-resources.sh */,
+				7D2AC3BC8E3688D11698BC6A3A122967 /* Pods.debug.xcconfig */,
+				5825E18C257E5D03FAB30D929BE13F54 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				ACA1FB2B2A017555C379F5E7236F7563 /* Pods */,
+				189BD58815D8A5DE5A74E54EABDB3798 /* Products */,
+				C343985AEF8D9C3DC9ED4086E6C42A7F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A8243D6D789CF5F5B78B3E9BEDD93185 /* Pods-EhouCompassTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF332BBA1DCA4EF5D8169EB71C09B1FD /* Pods-EhouCompassTests-acknowledgements.markdown */,
+				0F987D5D6C2F115CE996AA94038DDB53 /* Pods-EhouCompassTests-acknowledgements.plist */,
+				AE0F298F5426579E15B3D68BB5ACA744 /* Pods-EhouCompassTests-dummy.m */,
+				AF366AA01C0969681CD11309BF4CF0E3 /* Pods-EhouCompassTests-frameworks.sh */,
+				CFFB995D88640A69BA5B69515715F4FF /* Pods-EhouCompassTests-resources.sh */,
+				B2147FFEBA10ABB65462398DEDEC0A15 /* Pods-EhouCompassTests.debug.xcconfig */,
+				247F46E189312A81044ADB419272D976 /* Pods-EhouCompassTests.release.xcconfig */,
+			);
+			name = "Pods-EhouCompassTests";
+			path = "Target Support Files/Pods-EhouCompassTests";
+			sourceTree = "<group>";
+		};
+		ACA1FB2B2A017555C379F5E7236F7563 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C54A2C04F0A5BB2E0FBABF17CEDBF8C /* NendSDK_iOS */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C343985AEF8D9C3DC9ED4086E6C42A7F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				69E3A9997CC0B6206A0652B2FFC0AE6B /* Pods */,
+				F2FF21A22E9A38215E578F4BAA1EFB11 /* Pods-EhouCompass */,
+				A8243D6D789CF5F5B78B3E9BEDD93185 /* Pods-EhouCompassTests */,
+				DF82A16587EDBF268D9F956EFB38AE5C /* Pods-EhouCompassUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		DF82A16587EDBF268D9F956EFB38AE5C /* Pods-EhouCompassUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E55E9A2C2DEA7943F9C899937D5E4AA /* Pods-EhouCompassUITests-acknowledgements.markdown */,
+				F0C60903F9E4016424BF037B5D673898 /* Pods-EhouCompassUITests-acknowledgements.plist */,
+				7CAA50C9F1F1FA54C87AC58068A00EE0 /* Pods-EhouCompassUITests-dummy.m */,
+				4927C67B6FF3092EB94A47DDF9B74DD7 /* Pods-EhouCompassUITests-frameworks.sh */,
+				EC839B941A19FC4EA846ED47B68F621C /* Pods-EhouCompassUITests-resources.sh */,
+				06FB71905AD09CA31880501DF5DB2447 /* Pods-EhouCompassUITests.debug.xcconfig */,
+				7C53F7E32B5676C40B8D2F2ECB8AB9D1 /* Pods-EhouCompassUITests.release.xcconfig */,
+			);
+			name = "Pods-EhouCompassUITests";
+			path = "Target Support Files/Pods-EhouCompassUITests";
+			sourceTree = "<group>";
+		};
+		F2FF21A22E9A38215E578F4BAA1EFB11 /* Pods-EhouCompass */ = {
+			isa = PBXGroup;
+			children = (
+				F04270A2989484E650A2E3464E8A1E60 /* Pods-EhouCompass-acknowledgements.markdown */,
+				06A9865A0B5291EC7418D52E58CEAD1B /* Pods-EhouCompass-acknowledgements.plist */,
+				ADDE057DF8051C8E9063EEF174CA4F13 /* Pods-EhouCompass-dummy.m */,
+				DE2BD75B9CD45351072EA35331D8F4EA /* Pods-EhouCompass-frameworks.sh */,
+				930ED4DBEA0F669EBC8CA568A53A0074 /* Pods-EhouCompass-resources.sh */,
+				022CE31B065EEC35E6FF1BEEED3E8D25 /* Pods-EhouCompass.debug.xcconfig */,
+				2EB74253ACDA8C524D6EB35A324684FB /* Pods-EhouCompass.release.xcconfig */,
+			);
+			name = "Pods-EhouCompass";
+			path = "Target Support Files/Pods-EhouCompass";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0CA99939675D4280D1FC3372D71C7E66 /* Pods-EhouCompassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4218C868C7AD1E8A8373077FB3CCBC8B /* Build configuration list for PBXNativeTarget "Pods-EhouCompassTests" */;
+			buildPhases = (
+				AB86F9A13CAB39FEFFA69934F553529B /* Sources */,
+				5C094D724A7AB8892C78E13B2696F04D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-EhouCompassTests";
+			productName = "Pods-EhouCompassTests";
+			productReference = 8C98B298731BD962EABDD152141B472E /* libPods-EhouCompassTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1469924FC52F60B0068FA24EEFCB3EFC /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C358AA8BB91700063133597D41C4E0E /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				60DB2522D6809309FA2F3B04848E7536 /* Sources */,
+				2E78C4AC537A1782BCFD134B2B8940E0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = C74F4DBF7943A4D3C1C07D9D232017AE /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6B961369FD1AF3400F25E71F0F0B6695 /* Pods-EhouCompassUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F897DD879EDD088B74A201C7C34B982 /* Build configuration list for PBXNativeTarget "Pods-EhouCompassUITests" */;
+			buildPhases = (
+				A780D3EF4EFD355385B14615B5DF8550 /* Sources */,
+				A908B43E23174AF8BF4AF3248AE4BE09 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-EhouCompassUITests";
+			productName = "Pods-EhouCompassUITests";
+			productReference = DA02A2B0353D11007AA9E2AB4DCCF019 /* libPods-EhouCompassUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B0B94AA2F14C0FAFA8BE0F30E3924609 /* Pods-EhouCompass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BCA2401F408CEADBE06ADC40F0B0313 /* Build configuration list for PBXNativeTarget "Pods-EhouCompass" */;
+			buildPhases = (
+				6037363BE3843BEF394CB6B09E6E1A01 /* Sources */,
+				4F4DAE99FBB15190E0810EFAEFF661BC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-EhouCompass";
+			productName = "Pods-EhouCompass";
+			productReference = B27E9742E84DD0B991BA4E08E52578C0 /* libPods-EhouCompass.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 189BD58815D8A5DE5A74E54EABDB3798 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1469924FC52F60B0068FA24EEFCB3EFC /* Pods */,
+				B0B94AA2F14C0FAFA8BE0F30E3924609 /* Pods-EhouCompass */,
+				0CA99939675D4280D1FC3372D71C7E66 /* Pods-EhouCompassTests */,
+				6B961369FD1AF3400F25E71F0F0B6695 /* Pods-EhouCompassUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6037363BE3843BEF394CB6B09E6E1A01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99F47ECC9458662E68CA984D88D47F3 /* Pods-EhouCompass-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60DB2522D6809309FA2F3B04848E7536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B991A49F4C12A4F8462C02B69D83DB11 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A780D3EF4EFD355385B14615B5DF8550 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E458A36329EAE4FD596A7D56CE94256D /* Pods-EhouCompassUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB86F9A13CAB39FEFFA69934F553529B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E931371307A1B9F2D0D93A7106497986 /* Pods-EhouCompassTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		052A17875CB827423D627183396CEB60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36137E1FA41CB609814FADFF7B4D7E5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2147FFEBA10ABB65462398DEDEC0A15 /* Pods-EhouCompassTests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		768526771A075B491F765A38FC256E43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06FB71905AD09CA31880501DF5DB2447 /* Pods-EhouCompassUITests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		76BF48E2CA6F8FAA8C3FECB82B0D0269 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EB74253ACDA8C524D6EB35A324684FB /* Pods-EhouCompass.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8BCA14DF906994CF104991F8CD35340F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D2AC3BC8E3688D11698BC6A3A122967 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8EEE82A84ECD87AAF850B69F6FBAD89E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247F46E189312A81044ADB419272D976 /* Pods-EhouCompassTests.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A22CAE9FF4C47A1F7775FDEFA4535091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5825E18C257E5D03FAB30D929BE13F54 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E078C12CEB4B0F79A34F406E7A1EB41F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 022CE31B065EEC35E6FF1BEEED3E8D25 /* Pods-EhouCompass.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E80E4E32BFC9D7BEFE0837AD7A92E232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C53F7E32B5676C40B8D2F2ECB8AB9D1 /* Pods-EhouCompassUITests.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
+				052A17875CB827423D627183396CEB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4218C868C7AD1E8A8373077FB3CCBC8B /* Build configuration list for PBXNativeTarget "Pods-EhouCompassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36137E1FA41CB609814FADFF7B4D7E5F /* Debug */,
+				8EEE82A84ECD87AAF850B69F6FBAD89E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F897DD879EDD088B74A201C7C34B982 /* Build configuration list for PBXNativeTarget "Pods-EhouCompassUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				768526771A075B491F765A38FC256E43 /* Debug */,
+				E80E4E32BFC9D7BEFE0837AD7A92E232 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C358AA8BB91700063133597D41C4E0E /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCA14DF906994CF104991F8CD35340F /* Debug */,
+				A22CAE9FF4C47A1F7775FDEFA4535091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BCA2401F408CEADBE06ADC40F0B0313 /* Build configuration list for PBXNativeTarget "Pods-EhouCompass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E078C12CEB4B0F79A34F406E7A1EB41F /* Debug */,
+				76BF48E2CA6F8FAA8C3FECB82B0D0269 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
