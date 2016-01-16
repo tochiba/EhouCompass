@@ -6,12 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "batu1@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "batu1@3x.png",
+      "filename" : "non.png",
       "scale" : "3x"
     }
   ],

@@ -25,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var nadView: NADView!
     @IBOutlet weak var nadTopView: NADView!
+    @IBOutlet weak var saraView: UIImageView!
     @IBOutlet weak var baseView: UIImageView!
     @IBOutlet weak var rollView: UIImageView!
     @IBOutlet weak var shareView: UIView!
@@ -82,17 +83,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         switch number {
         case 4,9:
             _angle = 75
+            self.baseView.image = UIImage(named: "a")
             break
         case 0,5:
             _angle = 255
+            self.baseView.image = UIImage(named: "c")
             break
         case 1,6,3,8:
             _angle = 165
+            self.baseView.image = UIImage(named: "d")
             break
         case 2,7:
             _angle = 345
+            self.baseView.image = UIImage(named: "b")
             break
         default:
+            self.baseView.image = UIImage(named: "non")
             break
         }
         return _angle
@@ -116,7 +122,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationDuration(0.5)
             //            self.rollView.transform = CGAffineTransformMakeRotation(CGFloat(-(M_PI * (heading / 180))))
-            self.baseView.transform = CGAffineTransformMakeRotation(CGFloat(-(M_PI * (heading / 180))))
+            self.baseView.transform = CGAffineTransformMakeRotation(CGFloat(-(M_PI * (heading / 165))))
+            self.saraView.transform = CGAffineTransformMakeRotation(CGFloat(-(M_PI * (heading / 165))))
             UIView.commitAnimations()
             
             if Double(_hitAngle.leftAngle) < heading && heading < Double(_hitAngle.rightAngle) {
@@ -244,11 +251,11 @@ class ActivityManager: NSObject {
         var yearStr = "今年の"
         var angleStr = ""
         var aa = ""
-        let hash = "#恵方はこっち #恵方🍣"
+        let hash = "#恵方こっち #恵方🍣"
         if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let date = NSDate()
             let comps: NSDateComponents = calendar.components(NSCalendarUnit.Year, fromDate: date)
-            yearStr = String(comps.year) + "年の"
+            yearStr = String(comps.year) + "年"
             angleStr = getAngleString(comps.year) + "\n"
             
             let aaangle = (angleStr as NSString).substringToIndex(3)
@@ -258,7 +265,7 @@ class ActivityManager: NSObject {
             "`｜\(aaangle)｜(三(ﾟ　　)\n" +
             "　￣ＴＴ￣　￣し　　)\n" +
             "　　｜｜　　　｜ ○｜\n" +
-            "　　ﾞﾞﾞﾞ　　　(＿|＿)\n"
+            "　　ﾞﾞﾞﾞ　　　 (＿|＿)\n"
         }
         
         // 共有する項目
