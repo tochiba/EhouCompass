@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        NADInterstitial.sharedInstance().loadAdWithApiKey("308c2499c75c4a192f03c02b2fcebd16dcb45cc9", spotId: "213208")
-        
+        NADInterstitial.sharedInstance().loadAdWithApiKey("b74a6b1080d9e02c05ffee0c3079bb20344a569a", spotId: "514837")
+        //Meyasubaco.setApiKey("a65df6c2beb11dad68b074a6aedab4ecaa837fefa0791f967f445716a23039a1")
         return true
     }
 

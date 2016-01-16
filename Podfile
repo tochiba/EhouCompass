@@ -5,6 +5,7 @@
 
 platform :ios, "7.0"
 pod 'NendSDK_iOS'
+#pod 'Meyasubaco'
 
 target 'EhouCompass' do
 end

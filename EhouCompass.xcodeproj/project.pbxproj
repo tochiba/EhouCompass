@@ -16,6 +16,7 @@
 		8F58F2DF1C47DEA900542E34 /* EhouCompassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2DE1C47DEA900542E34 /* EhouCompassUITests.swift */; };
 		8F58F2ED1C47E10200542E34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F58F2EC1C47E10100542E34 /* CoreLocation.framework */; };
 		8F58F2F01C47E80B00542E34 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2EF1C47E80B00542E34 /* Empty.m */; };
+		8F58F2F21C493C9300542E34 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2F11C493C9300542E34 /* SettingViewController.swift */; };
 		F82287630609FB2B22459D10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1155CE58F07FC81DA18F0E6F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		8F58F2EC1C47E10100542E34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8F58F2EE1C47E80B00542E34 /* EhouCompass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EhouCompass-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F58F2EF1C47E80B00542E34 /* Empty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
+		8F58F2F11C493C9300542E34 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AED3C951D1D4C6180F75326A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				8F58F2CA1C47DEA800542E34 /* Info.plist */,
 				8F58F2EF1C47E80B00542E34 /* Empty.m */,
 				8F58F2EE1C47E80B00542E34 /* EhouCompass-Bridging-Header.h */,
+				8F58F2F11C493C9300542E34 /* SettingViewController.swift */,
 			);
 			path = EhouCompass;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				8F58F2F01C47E80B00542E34 /* Empty.m in Sources */,
 				8F58F2C11C47DEA800542E34 /* ViewController.swift in Sources */,
 				8F58F2BF1C47DEA800542E34 /* AppDelegate.swift in Sources */,
+				8F58F2F21C493C9300542E34 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +419,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Toshiki Chiba (R2U3DJS2ZM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -460,7 +464,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Toshiki Chiba (AVWWV46Y77)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -487,7 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Toshiki Chiba (R2U3DJS2ZM)";
 				INFOPLIST_FILE = EhouCompass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompass;
@@ -503,7 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Toshiki Chiba (AVWWV46Y77)";
 				INFOPLIST_FILE = EhouCompass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompass;
