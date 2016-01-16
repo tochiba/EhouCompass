@@ -132,9 +132,9 @@ import Accounts
 
 class ActivityManager: NSObject {
     
-    func getActivityVC(view: UIView?) -> UIActivityViewController {
+    func getActivityVC(vc: ViewController?) -> UIActivityViewController {
         var yearStr = "今年の"
-        var angleStr = "\n"
+        var angleStr = ""
         var aa = ""
         if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let date = NSDate()
@@ -157,12 +157,13 @@ class ActivityManager: NSObject {
         let shareWebsite = NSURL(string: "https://itunes.apple.com/us/app/ehou/id1075817264?l=ja&ls=1&mt=8")!
 
         var activityItems = [shareText, shareWebsite]
-        if let shareImage = view?.getImage() {
+        if let shareImage = vc?.shareView.getImage() {
             activityItems.append(shareImage)
         }
         
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = vc?.view
         
         // 使用しないアクティビティタイプ
         let excludedActivityTypes = [
@@ -199,7 +200,7 @@ class ActivityManager: NSObject {
     
     func showActivityView(viewController: ViewController) {
         weak var vc = viewController
-        vc?.presentViewController(getActivityVC(vc?.shareView), animated: true, completion: nil)
+        vc?.presentViewController(getActivityVC(vc), animated: true, completion: nil)
     }
 }
 
