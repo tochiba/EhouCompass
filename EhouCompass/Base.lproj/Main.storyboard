@@ -19,16 +19,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-hK-Dt9">
-                                <rect key="frame" x="0.0" y="495" width="600" height="55"/>
-                                <color key="backgroundColor" red="0.14604749177631579" green="0.62348375822368418" blue="0.98360402960526316" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-hK-Dt9">
+                                <rect key="frame" x="256" y="471" width="88" height="69"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="AoM-hK-Dt9" secondAttribute="height" multiplier="88:69" id="D8k-yC-Hwe"/>
                                     <constraint firstAttribute="height" constant="55" id="I48-Za-2cp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="みんなに恵方の方角を教えてあげよう">
+                                <state key="normal" image="sharebtn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="I48-Za-2cp"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="didPushShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLB-9u-V1L"/>
                                 </connections>
@@ -155,7 +160,7 @@
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ED9-kl-o0u"/>
                             <constraint firstItem="ihQ-c9-eCA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FP5-9t-R7P"/>
                             <constraint firstItem="AoM-hK-Dt9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IOR-i4-cEl"/>
-                            <constraint firstItem="ihQ-c9-eCA" firstAttribute="top" secondItem="AoM-hK-Dt9" secondAttribute="bottom" id="Jco-mF-QrE"/>
+                            <constraint firstItem="ihQ-c9-eCA" firstAttribute="top" secondItem="AoM-hK-Dt9" secondAttribute="bottom" constant="10" id="Jco-mF-QrE"/>
                             <constraint firstAttribute="trailing" secondItem="lpV-18-afb" secondAttribute="trailing" constant="50" id="Uy9-GB-xnK"/>
                             <constraint firstAttribute="trailing" secondItem="hjG-zJ-xkd" secondAttribute="trailing" id="W1x-lU-0bV"/>
                             <constraint firstAttribute="trailing" secondItem="AoM-hK-Dt9" secondAttribute="trailing" id="Yje-dK-vwM"/>
@@ -168,6 +173,7 @@
                             <constraint firstItem="AoM-hK-Dt9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nJ7-uM-Gfy"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="top" secondItem="yrw-0L-juh" secondAttribute="bottom" id="pnH-gc-jds"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qyv-YI-svw"/>
+                            <constraint firstItem="AoM-hK-Dt9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r54-ZY-BDy"/>
                             <constraint firstItem="lpV-18-afb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tPn-dd-dyQ"/>
                             <constraint firstItem="ihQ-c9-eCA" firstAttribute="top" secondItem="hjG-zJ-xkd" secondAttribute="bottom" id="vWO-Yk-CaE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ihQ-c9-eCA" secondAttribute="bottom" id="wuO-Rt-Hxi"/>
@@ -181,6 +187,8 @@
                                 <exclude reference="gyB-Qd-JJV"/>
                                 <exclude reference="jgP-nW-Eru"/>
                                 <exclude reference="pnH-gc-jds"/>
+                                <exclude reference="IOR-i4-cEl"/>
+                                <exclude reference="Yje-dK-vwM"/>
                                 <exclude reference="i9d-tI-xCG"/>
                                 <exclude reference="nJ7-uM-Gfy"/>
                                 <exclude reference="vWO-Yk-CaE"/>
@@ -204,7 +212,8 @@
     </scenes>
     <resources>
         <image name="hari" width="70" height="277"/>
-        <image name="non" width="1411" height="1513"/>
+        <image name="non" width="470" height="504"/>
         <image name="sara" width="432" height="427"/>
+        <image name="sharebtn" width="88" height="69"/>
     </resources>
 </document>
