@@ -85,17 +85,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="nendApiKey" value="a6eca9dd074372c898dd1df549301f277c53f2b9"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oso-cQ-ynZ">
-                                <rect key="frame" x="534" y="90" width="46" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="ERv-6p-mnE"/>
-                                    <constraint firstAttribute="width" constant="46" id="guU-ly-hA0"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="iIi-Af-MxR" kind="presentation" modalTransitionStyle="flipHorizontal" id="gfP-zt-eF5"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -103,9 +92,7 @@
                             <constraint firstItem="yrw-0L-juh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGQ-zZ-mIi"/>
                             <constraint firstItem="ihQ-c9-eCA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FP5-9t-R7P"/>
                             <constraint firstItem="lpV-18-afb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hbF-yy-nNl"/>
-                            <constraint firstItem="Oso-cQ-ynZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="pVp-Mq-4HJ"/>
                             <constraint firstItem="lpV-18-afb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tPn-dd-dyQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Oso-cQ-ynZ" secondAttribute="trailing" constant="20" id="wcJ-dL-gn6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ihQ-c9-eCA" secondAttribute="bottom" id="wuO-Rt-Hxi"/>
                         </constraints>
                     </view>
@@ -121,54 +108,9 @@
             </objects>
             <point key="canvasLocation" x="288" y="309"/>
         </scene>
-        <!--設定-->
-        <scene sceneID="ndi-oP-awq">
-            <objects>
-                <viewController id="h2n-Rz-9Ai" customClass="SettingViewController" customModule="EhouCompass" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ki9-tx-56i"/>
-                        <viewControllerLayoutGuide type="bottom" id="AjT-b0-nqW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RAi-Rj-Q5i">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="設定" id="BqB-0i-PNF">
-                        <barButtonItem key="rightBarButtonItem" image="batu1" id="KIS-qa-aA9">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="didPushCloseButton:" destination="h2n-Rz-9Ai" id="gbe-gN-vtX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tnz-r7-WAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1844" y="309"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AB2-1t-qah">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iIi-Af-MxR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m8x-Vx-FhB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="h2n-Rz-9Ai" kind="relationship" relationship="rootViewController" id="EQp-Dy-Z0A"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u5L-Rv-WnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1032" y="309"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Ehou-direction" width="234" height="218"/>
-        <image name="batu1" width="18" height="17"/>
         <image name="ya" width="36" height="95"/>
     </resources>
 </document>
