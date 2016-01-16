@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreLocation
+import SpriteKit
+import AudioToolbox
+import AVFoundation
 
 struct HitAngle {
     var leftAngle: Int
@@ -18,12 +21,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var checkAngle: HitAngle?
+    var now = NSDate()
     
     @IBOutlet weak var nadView: NADView!
     @IBOutlet weak var nadTopView: NADView!
     @IBOutlet weak var baseView: UIImageView!
     @IBOutlet weak var rollView: UIImageView!
     @IBOutlet weak var shareView: UIView!
+    @IBOutlet weak var skView: SKView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +40,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         //Meyasubaco.showCommentViewController(self)
-        ActivityManager().showActivityView(self)
+        //ActivityManager().showActivityView(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,8 +106,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         
-        //print(heading)
-        if let _hitAngle = self.checkAngle {
+            if let _hitAngle = self.checkAngle {
             let heading = newHeading.magneticHeading
             
             UIView.beginAnimations(nil, context: nil)
@@ -112,19 +116,119 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             UIView.commitAnimations()
             
             if Double(_hitAngle.leftAngle) < heading && heading < Double(_hitAngle.rightAngle) {
-                print("HIT!! \n")
-                print(heading)
-                print("\n")
-                self.view.backgroundColor = UIColor.redColor()
+                showLight(true)
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                showParticle(true)
                 return
             }
         }
         
+        showLight(false)
+        showParticle(false)
         self.view.backgroundColor = UIColor.whiteColor()
     }
     
     func locationManagerShouldDisplayHeadingCalibration(manager: CLLocationManager) -> Bool {
         return true
+    }
+    
+    private func showLight(on: Bool) {
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        do {
+            try device.lockForConfiguration()
+            
+        }
+        catch _ {
+            return
+        }
+        
+        if on == false {
+            device.torchMode = AVCaptureTorchMode.Off
+        }
+        else {
+            if device.torchMode == AVCaptureTorchMode.Off {
+                device.torchMode = AVCaptureTorchMode.On
+            }
+            else {
+                device.torchMode = AVCaptureTorchMode.Off
+            }
+        }
+        
+        device.unlockForConfiguration()
+        
+    }
+    
+    // MARK: SpriteKit
+    func showParticle(start: Bool) {
+        
+        if start == false {
+            self.skView.hidden = true
+            return
+        }
+        
+        self.skView.hidden = false
+        
+        if self.skView.scene != nil {
+            return
+        }
+        
+        //self.skView.hidden = false
+        //if NSDate().timeIntervalSinceDate(self.now) > Double(2) {
+            if let scene = SpriteScene.unarchiveFromFile("SpriteScene") as? SpriteScene {
+                if scene.children.count == 0 {
+                    self.skView.userInteractionEnabled = false
+                    self.skView.allowsTransparency = true
+                    scene.backgroundColor = UIColor.clearColor()
+                    scene.scaleMode = SKSceneScaleMode.AspectFill
+                    self.skView.presentScene(scene)
+                    
+                    //self.now = NSDate()
+                }
+            }
+        //}
+        
+    }
+}
+
+class SpriteScene: SKScene {
+    override func didMoveToView(view: SKView) {
+        self.backgroundColor = UIColor.clearColor()
+        
+        if self.children.count == 0 {
+            if let path = NSBundle.mainBundle().pathForResource("SparkParticle", ofType: "sks") {
+                if let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? SKEmitterNode {
+                    particle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidX(self.frame))
+                    
+//                    let scale = SKAction.scaleTo(2.0, duration: 2)
+//                    let fadeout = SKAction.fadeOutWithDuration(2)
+//                    let remove = SKAction.removeFromParent()
+//                    let sequence = SKAction.sequence([scale, fadeout, remove])
+//                    particle.runAction(sequence)
+                    
+                    self.addChild(particle)
+                }
+            }
+        }
+    }
+    
+    class func unarchiveFromFile(file: String) -> AnyObject? {
+        if let nodePath = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
+            var data: NSData = NSData()
+            do {
+                data = try NSData(contentsOfFile: nodePath, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+            }
+            catch _ {
+            }
+            
+            let arch = NSKeyedUnarchiver(forReadingWithData: data)
+            arch.setClass(self, forClassName: "SKScene")
+            
+            let scene = arch.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as? SKScene
+            arch.finishDecoding()
+            
+            return scene
+        }
+        return nil
     }
 }
 
@@ -136,6 +240,7 @@ class ActivityManager: NSObject {
         var yearStr = "今年の"
         var angleStr = ""
         var aa = ""
+        let hash = "#恵方はこっち #恵方🍣"
         if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let date = NSDate()
             let comps: NSDateComponents = calendar.components(NSCalendarUnit.Year, fromDate: date)
@@ -144,7 +249,7 @@ class ActivityManager: NSObject {
             
             let aaangle = (angleStr as NSString).substringToIndex(3)
             aa =
-            "ﾊﾞｸﾊﾞｸﾑｼｬﾑｼｬ\n" +
+            //"ﾊﾞｸﾊﾞｸﾑｼｬﾑｼｬ\n" +
             "　＿＿＿＿　＿_∧_∧\n" +
             "`｜\(aaangle)｜(三(ﾟ　　)\n" +
             "　￣ＴＴ￣　￣し　　)\n" +
@@ -153,7 +258,7 @@ class ActivityManager: NSObject {
         }
         
         // 共有する項目
-        let shareText = yearStr + "恵方は" + angleStr + aa
+        let shareText = yearStr + "恵方は" + angleStr + aa + hash
         let shareWebsite = NSURL(string: "https://itunes.apple.com/us/app/ehou/id1075817264?l=ja&ls=1&mt=8")!
 
         var activityItems = [shareText, shareWebsite]
@@ -172,6 +277,10 @@ class ActivityManager: NSObject {
         ]
         
         activityVC.excludedActivityTypes = excludedActivityTypes
+        let completionHandler:UIActivityViewControllerCompletionWithItemsHandler = { (str, isFinish, arr, error) in
+            NADInterstitial.sharedInstance().showAd()
+        }
+        activityVC.completionWithItemsHandler = completionHandler
         return activityVC
     }
     
