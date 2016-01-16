@@ -48,6 +48,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPushShareButton(sender: AnyObject) {
+        ActivityManager().showActivityView(self)
+    }
+    
     private func getEhouAngle() -> HitAngle {
         var yearNumber: Int = 999 // Error
         

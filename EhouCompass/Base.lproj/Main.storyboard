@@ -18,6 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-hK-Dt9">
+                                <rect key="frame" x="0.0" y="495" width="600" height="55"/>
+                                <color key="backgroundColor" red="0.14604749177631579" green="0.62348375822368418" blue="0.98360402960526316" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="I48-Za-2cp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="みんなに恵方の方角を教えてあげよう">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLB-9u-V1L"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjG-zJ-xkd" customClass="SKView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -110,12 +124,17 @@
                             <constraint firstAttribute="trailing" secondItem="hjG-zJ-xkd" secondAttribute="trailing" id="Bh7-GS-ccD"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ED9-kl-o0u"/>
                             <constraint firstItem="ihQ-c9-eCA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FP5-9t-R7P"/>
+                            <constraint firstItem="AoM-hK-Dt9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IOR-i4-cEl"/>
+                            <constraint firstItem="ihQ-c9-eCA" firstAttribute="top" secondItem="AoM-hK-Dt9" secondAttribute="bottom" id="Jco-mF-QrE"/>
                             <constraint firstAttribute="trailing" secondItem="hjG-zJ-xkd" secondAttribute="trailing" id="W1x-lU-0bV"/>
+                            <constraint firstAttribute="trailing" secondItem="AoM-hK-Dt9" secondAttribute="trailing" id="Yje-dK-vwM"/>
                             <constraint firstAttribute="bottom" secondItem="hjG-zJ-xkd" secondAttribute="bottom" id="faL-5P-GDD"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fsn-gd-2Jj"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gyB-Qd-JJV"/>
                             <constraint firstItem="lpV-18-afb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hbF-yy-nNl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AoM-hK-Dt9" secondAttribute="trailing" id="i9d-tI-xCG"/>
                             <constraint firstAttribute="bottomMargin" secondItem="hjG-zJ-xkd" secondAttribute="bottom" id="jgP-nW-Eru"/>
+                            <constraint firstItem="AoM-hK-Dt9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nJ7-uM-Gfy"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="top" secondItem="yrw-0L-juh" secondAttribute="bottom" id="pnH-gc-jds"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qyv-YI-svw"/>
                             <constraint firstItem="lpV-18-afb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tPn-dd-dyQ"/>
@@ -131,6 +150,8 @@
                                 <exclude reference="gyB-Qd-JJV"/>
                                 <exclude reference="jgP-nW-Eru"/>
                                 <exclude reference="pnH-gc-jds"/>
+                                <exclude reference="i9d-tI-xCG"/>
+                                <exclude reference="nJ7-uM-Gfy"/>
                                 <exclude reference="vWO-Yk-CaE"/>
                             </mask>
                         </variation>
