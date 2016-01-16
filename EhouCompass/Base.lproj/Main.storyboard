@@ -19,25 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-hK-Dt9">
-                                <rect key="frame" x="256" y="471" width="88" height="69"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="AoM-hK-Dt9" secondAttribute="height" multiplier="88:69" id="D8k-yC-Hwe"/>
-                                    <constraint firstAttribute="height" constant="55" id="I48-Za-2cp"/>
-                                </constraints>
-                                <state key="normal" image="sharebtn">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="I48-Za-2cp"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="didPushShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLB-9u-V1L"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjG-zJ-xkd" customClass="SKView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -144,10 +125,32 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAdjustAdSize" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="nendSpotID" value="3172"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="nendApiKey" value="a6eca9dd074372c898dd1df549301f277c53f2b9"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nendSpotID" value="158345"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nendApiKey" value="29cb67a566320d6af7b1075a7b6fc2f9141cabf0"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-hK-Dt9">
+                                <rect key="frame" x="256" y="471" width="88" height="69"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="Am4-eL-Dob"/>
+                                    <constraint firstAttribute="width" secondItem="AoM-hK-Dt9" secondAttribute="height" multiplier="88:69" id="D8k-yC-Hwe"/>
+                                    <constraint firstAttribute="height" constant="69" id="GCo-Jo-Imu"/>
+                                    <constraint firstAttribute="height" constant="55" id="I48-Za-2cp"/>
+                                </constraints>
+                                <state key="normal" image="sharebtn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="D8k-yC-Hwe"/>
+                                        <exclude reference="I48-Za-2cp"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="didPushShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLB-9u-V1L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -158,9 +161,11 @@
                             <constraint firstItem="yrw-0L-juh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGQ-zZ-mIi"/>
                             <constraint firstAttribute="trailing" secondItem="hjG-zJ-xkd" secondAttribute="trailing" id="Bh7-GS-ccD"/>
                             <constraint firstItem="hjG-zJ-xkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ED9-kl-o0u"/>
+                            <constraint firstItem="ihQ-c9-eCA" firstAttribute="top" secondItem="AoM-hK-Dt9" secondAttribute="bottom" constant="10" id="Euv-Af-s9G"/>
                             <constraint firstItem="ihQ-c9-eCA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FP5-9t-R7P"/>
                             <constraint firstItem="AoM-hK-Dt9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IOR-i4-cEl"/>
                             <constraint firstItem="ihQ-c9-eCA" firstAttribute="top" secondItem="AoM-hK-Dt9" secondAttribute="bottom" constant="10" id="Jco-mF-QrE"/>
+                            <constraint firstAttribute="bottom" secondItem="AoM-hK-Dt9" secondAttribute="bottom" constant="60" id="LYP-Wn-hmq"/>
                             <constraint firstAttribute="trailing" secondItem="lpV-18-afb" secondAttribute="trailing" constant="50" id="Uy9-GB-xnK"/>
                             <constraint firstAttribute="trailing" secondItem="hjG-zJ-xkd" secondAttribute="trailing" id="W1x-lU-0bV"/>
                             <constraint firstAttribute="trailing" secondItem="AoM-hK-Dt9" secondAttribute="trailing" id="Yje-dK-vwM"/>
@@ -176,6 +181,7 @@
                             <constraint firstItem="AoM-hK-Dt9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r54-ZY-BDy"/>
                             <constraint firstItem="lpV-18-afb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tPn-dd-dyQ"/>
                             <constraint firstItem="ihQ-c9-eCA" firstAttribute="top" secondItem="hjG-zJ-xkd" secondAttribute="bottom" id="vWO-Yk-CaE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AoM-hK-Dt9" secondAttribute="bottom" constant="60" id="wcr-F3-OsX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ihQ-c9-eCA" secondAttribute="bottom" id="wuO-Rt-Hxi"/>
                         </constraints>
                         <variation key="default">
@@ -188,13 +194,18 @@
                                 <exclude reference="jgP-nW-Eru"/>
                                 <exclude reference="pnH-gc-jds"/>
                                 <exclude reference="IOR-i4-cEl"/>
+                                <exclude reference="LYP-Wn-hmq"/>
                                 <exclude reference="Yje-dK-vwM"/>
                                 <exclude reference="i9d-tI-xCG"/>
                                 <exclude reference="nJ7-uM-Gfy"/>
+                                <exclude reference="Jco-mF-QrE"/>
                                 <exclude reference="vWO-Yk-CaE"/>
+                                <exclude reference="wcr-F3-OsX"/>
                             </mask>
                         </variation>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="baseView" destination="LKn-qP-Jy0" id="OzI-AZ-hHA"/>
                         <outlet property="nadTopView" destination="yrw-0L-juh" id="hXw-yT-fU3"/>

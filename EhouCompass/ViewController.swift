@@ -41,7 +41,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         //Meyasubaco.showCommentViewController(self)
-        //ActivityManager().showActivityView(self)
+        //Meyasubaco.showHelpListViewController(self)
     }
     
     override func didReceiveMemoryWarning() {

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1FDDD59F5841440F2C0908D8'
+               BlueprintIdentifier = '4BE556DB43BD479903368DA9'
                BlueprintName = 'Pods-EhouCompass'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-EhouCompass.a'>
