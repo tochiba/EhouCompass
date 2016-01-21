@@ -19,6 +19,7 @@
 		8F58F2F21C493C9300542E34 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2F11C493C9300542E34 /* SettingViewController.swift */; };
 		8F58F2F51C4A177800542E34 /* SparkParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8F58F2F31C4A177800542E34 /* SparkParticle.sks */; };
 		8F58F2F61C4A177800542E34 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F58F2F41C4A177800542E34 /* spark.png */; };
+		8FC4AE641C50F5C4009535CE /* SpriteScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FC4AE631C50F5C3009535CE /* SpriteScene.sks */; };
 		F82287630609FB2B22459D10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1155CE58F07FC81DA18F0E6F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		8F58F2F11C493C9300542E34 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8F58F2F31C4A177800542E34 /* SparkParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparkParticle.sks; sourceTree = "<group>"; };
 		8F58F2F41C4A177800542E34 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		8FC4AE631C50F5C3009535CE /* SpriteScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpriteScene.sks; sourceTree = "<group>"; };
 		AED3C951D1D4C6180F75326A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 				8F58F2EE1C47E80B00542E34 /* EhouCompass-Bridging-Header.h */,
 				8F58F2F11C493C9300542E34 /* SettingViewController.swift */,
 				8F58F2F31C4A177800542E34 /* SparkParticle.sks */,
+				8FC4AE631C50F5C3009535CE /* SpriteScene.sks */,
 				8F58F2F41C4A177800542E34 /* spark.png */,
 			);
 			path = EhouCompass;
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F58F2F61C4A177800542E34 /* spark.png in Resources */,
+				8FC4AE641C50F5C4009535CE /* SpriteScene.sks in Resources */,
 				8F58F2C91C47DEA800542E34 /* LaunchScreen.storyboard in Resources */,
 				8F58F2F51C4A177800542E34 /* SparkParticle.sks in Resources */,
 				8F58F2C61C47DEA800542E34 /* Assets.xcassets in Resources */,
