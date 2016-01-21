@@ -36,13 +36,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         self.checkAngle = getEhouAngle()
         setupLocationManager()
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        //Meyasubaco.showCommentViewController(self)
-        //Meyasubaco.showHelpListViewController(self)
     }
     
     override func didReceiveMemoryWarning() {
