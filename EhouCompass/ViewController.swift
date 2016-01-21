@@ -36,6 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         self.checkAngle = getEhouAngle()
         setupLocationManager()
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -144,29 +145,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func showLight(on: Bool) {
-        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        do {
-            try device.lockForConfiguration()
+        if let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo) {
+            do {
+                try device.lockForConfiguration()
+                
+            }
+            catch _ {
+                return
+            }
             
-        }
-        catch _ {
-            return
-        }
-        
-        if on == false {
-            device.torchMode = AVCaptureTorchMode.Off
-        }
-        else {
-            if device.torchMode == AVCaptureTorchMode.Off {
-                device.torchMode = AVCaptureTorchMode.On
+            if device.hasTorch {
+                if on == false {
+                    device.torchMode = AVCaptureTorchMode.Off
+                }
+                else {
+                    if device.torchMode == AVCaptureTorchMode.Off {
+                        device.torchMode = AVCaptureTorchMode.On
+                    }
+                    else {
+                        device.torchMode = AVCaptureTorchMode.Off
+                    }
+                }
             }
-            else {
-                device.torchMode = AVCaptureTorchMode.Off
-            }
+            device.unlockForConfiguration()
         }
-        
-        device.unlockForConfiguration()
-        
     }
     
     // MARK: SpriteKit
