@@ -21,7 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var checkAngle: HitAngle?
-    var now = NSDate()
+    var now = Date()
     
     @IBOutlet weak var nadView: NADView!
     @IBOutlet weak var nadTopView: NADView!
@@ -38,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         setupLocationManager()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
@@ -47,18 +47,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPushShareButton(sender: AnyObject) {
+    @IBAction func didPushShareButton(_ sender: AnyObject) {
         ActivityManager().showActivityView(self)
     }
     
-    private func getEhouAngle() -> HitAngle {
+    fileprivate func getEhouAngle() -> HitAngle {
         var yearNumber: Int = 999 // Error
         
-        let date = NSDate()
-        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
-            let comps: NSDateComponents = calendar.components(NSCalendarUnit.Year, fromDate: date)
-            yearNumber = comps.year
-        }
+        let date = Date()
+        
+        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        let comps: DateComponents = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: date)
+        yearNumber = comps.year!
         
         // Error
         if yearNumber == 999 {
@@ -75,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         return HitAngle.init(leftAngle: angle - 5, rightAngle: angle + 5)
     }
     
-    private func getAngle(year: Int) -> Int {
+    fileprivate func getAngle(_ year: Int) -> Int {
         let number = year % 10
         var _angle: Int = 0
         switch number {
@@ -102,26 +102,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         return _angle
     }
     
-    private func setupLocationManager() {
+    fileprivate func setupLocationManager() {
         if CLLocationManager.headingAvailable() {
             self.locationManager.delegate = self
             self.locationManager.headingFilter = kCLHeadingFilterNone
-            self.locationManager.headingOrientation = CLDeviceOrientation.Portrait
+            self.locationManager.headingOrientation = CLDeviceOrientation.portrait
             self.locationManager.startUpdatingHeading()
         }
     }
     
     // MARK: CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         
-            if let _hitAngle = self.checkAngle {
+        if let _hitAngle = self.checkAngle {
             let heading = newHeading.magneticHeading
             
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationDuration(0.5)
-            //            self.rollView.transform = CGAffineTransformMakeRotation(CGFloat(-(M_PI * (heading / 180))))
-            self.baseView.transform = CGAffineTransformMakeRotation(CGFloat(-(M_PI * (heading / 165))))
-            self.saraView.transform = CGAffineTransformMakeRotation(CGFloat(-(M_PI * (heading / 165))))
+            self.baseView.transform = CGAffineTransform(rotationAngle: CGFloat(-(M_PI * (heading / 165))))
+            self.saraView.transform = CGAffineTransform(rotationAngle: CGFloat(-(M_PI * (heading / 165))))
             UIView.commitAnimations()
             
             if Double(_hitAngle.leftAngle) < heading && heading < Double(_hitAngle.rightAngle) {
@@ -134,15 +133,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         showLight(false)
         showParticle(false)
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
     }
     
-    func locationManagerShouldDisplayHeadingCalibration(manager: CLLocationManager) -> Bool {
+    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
         return true
     }
     
-    private func showLight(on: Bool) {
-        if let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo) {
+    fileprivate func showLight(_ on: Bool) {
+        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) {
             do {
                 try device.lockForConfiguration()
                 
@@ -153,14 +152,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             if device.hasTorch {
                 if on == false {
-                    device.torchMode = AVCaptureTorchMode.Off
+                    device.torchMode = AVCaptureTorchMode.off
                 }
                 else {
-                    if device.torchMode == AVCaptureTorchMode.Off {
-                        device.torchMode = AVCaptureTorchMode.On
+                    if device.torchMode == AVCaptureTorchMode.off {
+                        device.torchMode = AVCaptureTorchMode.on
                     }
                     else {
-                        device.torchMode = AVCaptureTorchMode.Off
+                        device.torchMode = AVCaptureTorchMode.off
                     }
                 }
             }
@@ -169,71 +168,59 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // MARK: SpriteKit
-    func showParticle(start: Bool) {
+    func showParticle(_ start: Bool) {
         
         if start == false {
-            self.skView.hidden = true
+            self.skView.isHidden = true
             return
         }
         
-        self.skView.hidden = false
+        self.skView.isHidden = false
         
         if self.skView.scene != nil {
             return
         }
         
-        //self.skView.hidden = false
-        //if NSDate().timeIntervalSinceDate(self.now) > Double(2) {
-            if let scene = SpriteScene.unarchiveFromFile("SpriteScene") as? SpriteScene {
-                if scene.children.count == 0 {
-                    self.skView.userInteractionEnabled = false
-                    self.skView.allowsTransparency = true
-                    scene.backgroundColor = UIColor.clearColor()
-                    scene.scaleMode = SKSceneScaleMode.AspectFill
-                    self.skView.presentScene(scene)
-                    
-                    //self.now = NSDate()
-                }
+        if let scene = SpriteScene.unarchiveFromFile("SpriteScene") as? SpriteScene {
+            if scene.children.count == 0 {
+                self.skView.isUserInteractionEnabled = false
+                self.skView.allowsTransparency = true
+                scene.backgroundColor = UIColor.clear
+                scene.scaleMode = SKSceneScaleMode.aspectFill
+                self.skView.presentScene(scene)
+                
             }
-        //}
-        
+        }
     }
 }
 
 class SpriteScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        self.backgroundColor = UIColor.clearColor()
+    override func didMove(to view: SKView) {
+        self.backgroundColor = UIColor.clear
         
         if self.children.count == 0 {
-            if let path = NSBundle.mainBundle().pathForResource("SparkParticle", ofType: "sks") {
-                if let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? SKEmitterNode {
-                    particle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidX(self.frame))
-                    
-//                    let scale = SKAction.scaleTo(2.0, duration: 2)
-//                    let fadeout = SKAction.fadeOutWithDuration(2)
-//                    let remove = SKAction.removeFromParent()
-//                    let sequence = SKAction.sequence([scale, fadeout, remove])
-//                    particle.runAction(sequence)
-                    
+            if let path = Bundle.main.path(forResource: "SparkParticle", ofType: "sks") {
+                if let particle = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? SKEmitterNode {
+                    particle.position = CGPoint(x: self.frame.midX, y: self.frame.midX)
                     self.addChild(particle)
                 }
             }
         }
     }
     
-    class func unarchiveFromFile(file: String) -> AnyObject? {
-        if let nodePath = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
-            var data: NSData = NSData()
+    class func unarchiveFromFile(_ file: String) -> AnyObject? {
+        if let nodePath = Bundle.main.path(forResource: file, ofType: "sks") {
+            var data: Data = Data()
             do {
-                data = try NSData(contentsOfFile: nodePath, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                data = try Data(contentsOf: URL(fileURLWithPath: nodePath), options: NSData.ReadingOptions.mappedIfSafe)
             }
             catch _ {
             }
             
-            let arch = NSKeyedUnarchiver(forReadingWithData: data)
+            let arch = NSKeyedUnarchiver(forReadingWith: data)
             arch.setClass(self, forClassName: "SKScene")
             
-            let scene = arch.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as? SKScene
+            let scene = arch.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? SKScene
             arch.finishDecoding()
             
             return scene
@@ -246,32 +233,32 @@ import Accounts
 
 class ActivityManager: NSObject {
     
-    func getActivityVC(vc: ViewController?) -> UIActivityViewController {
+    func getActivityVC(_ vc: ViewController?) -> UIActivityViewController {
         var yearStr = "今年の"
         var angleStr = ""
         var aa = ""
         let hash = "#恵方こっち #恵方🍣"
-        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
-            let date = NSDate()
-            let comps: NSDateComponents = calendar.components(NSCalendarUnit.Year, fromDate: date)
-            yearStr = String(comps.year) + "年"
-            angleStr = getAngleString(comps.year) + "\n"
-            
-            let aaangle = (angleStr as NSString).substringToIndex(3)
-            aa =
+        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        let date = Date()
+        let comps: DateComponents = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: date)
+        yearStr = String(describing: comps.year) + "年"
+        angleStr = getAngleString(comps.year!) + "\n"
+        
+        let aaangle = (angleStr as NSString).substring(to: 3)
+        aa =
             //"ﾊﾞｸﾊﾞｸﾑｼｬﾑｼｬ\n" +
             "　＿＿＿＿　＿_∧_∧\n" +
             "`｜\(aaangle)｜(三(ﾟ　　)\n" +
             "　￣ＴＴ￣　￣し　　)\n" +
             "　　｜｜　　　｜ ○｜\n" +
-            "　　ﾞﾞﾞﾞ　　　 (＿|＿)\n"
-        }
+        "　　ﾞﾞﾞﾞ　　　 (＿|＿)\n"
+        
         
         // 共有する項目
         let shareText = yearStr + "恵方は" + angleStr + aa + hash
-        let shareWebsite = NSURL(string: "https://itunes.apple.com/us/app/ehou/id1075817264?l=ja&ls=1&mt=8")!
-
-        var activityItems = [shareText, shareWebsite]
+        let shareWebsite = URL(string: "https://itunes.apple.com/us/app/ehou/id1075817264?l=ja&ls=1&mt=8")!
+        
+        var activityItems = [shareText, shareWebsite] as [Any]
         if let shareImage = vc?.shareView.getImage() {
             activityItems.append(shareImage)
         }
@@ -282,8 +269,8 @@ class ActivityManager: NSObject {
         
         // 使用しないアクティビティタイプ
         let excludedActivityTypes = [
-            UIActivityTypeSaveToCameraRoll,
-            UIActivityTypePrint
+            UIActivityType.saveToCameraRoll,
+            UIActivityType.print
         ]
         
         activityVC.excludedActivityTypes = excludedActivityTypes
@@ -295,7 +282,7 @@ class ActivityManager: NSObject {
     }
     
     
-    private func getAngleString(year: Int) -> String {
+    fileprivate func getAngleString(_ year: Int) -> String {
         let number = year % 10
         var _angle = ""
         switch number {
@@ -317,9 +304,9 @@ class ActivityManager: NSObject {
         return _angle
     }
     
-    func showActivityView(viewController: ViewController) {
+    func showActivityView(_ viewController: ViewController) {
         weak var vc = viewController
-        vc?.presentViewController(getActivityVC(vc), animated: true, completion: nil)
+        vc?.present(getActivityVC(vc), animated: true, completion: nil)
     }
 }
 
@@ -332,13 +319,13 @@ extension UIView {
         
         // ビットマップ画像のcontextを作成.
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-        if let context: CGContextRef = UIGraphicsGetCurrentContext() {
+        if let context: CGContext = UIGraphicsGetCurrentContext() {
             
             // 対象のview内の描画をcontextに複写する.
-            self.layer.renderInContext(context)
+            self.layer.render(in: context)
             
             // 現在のcontextのビットマップをUIImageとして取得.
-            let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+            let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             
             // contextを閉じる.
             UIGraphicsEndImageContext()

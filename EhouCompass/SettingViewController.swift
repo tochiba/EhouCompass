@@ -10,7 +10,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
-    @IBAction func didPushCloseButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didPushCloseButton(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
