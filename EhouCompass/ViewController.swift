@@ -11,98 +11,67 @@ import CoreLocation
 import SpriteKit
 import AudioToolbox
 import AVFoundation
+import GoogleMobileAds
 
-struct HitAngle {
-    var leftAngle: Int
-    var rightAngle: Int
-}
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-    
-    let locationManager = CLLocationManager()
-    var checkAngle: HitAngle?
-    var now = Date()
+class ViewController: UIViewController {
     
     @IBOutlet weak var nadView: NADView!
     @IBOutlet weak var nadTopView: NADView!
+    
+    @IBOutlet weak var gadTopBannerView: GADBannerView!
+    @IBOutlet weak var gadUnderBannerView: GADBannerView!
+    
     @IBOutlet weak var saraView: UIImageView!
     @IBOutlet weak var baseView: UIImageView!
     @IBOutlet weak var rollView: UIImageView!
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var skView: SKView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.checkAngle = getEhouAngle()
-        setupLocationManager()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func didPushShareButton(_ sender: AnyObject) {
-        ActivityManager().showActivityView(self)
+        ActivityViewController().show(self)
     }
     
-    fileprivate func getEhouAngle() -> HitAngle {
-        var yearNumber: Int = 999 // Error
-        
-        let date = Date()
-        
+    struct HitAngle {
+        var leftAngle: Int
+        var rightAngle: Int
+    }
+    
+    private let locationManager = CLLocationManager()
+    
+    fileprivate var checkAngle: HitAngle? {
         let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-        let comps: DateComponents = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: date)
-        yearNumber = comps.year!
+        let comps: DateComponents = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: Date())
         
-        // Error
-        if yearNumber == 999 {
-            return HitAngle.init(leftAngle: yearNumber, rightAngle: yearNumber)
-        }
-        
-        let angle = getAngle(yearNumber)
-        
-        // Error
-        if angle == 0 {
+        guard let yearNumber = comps.year, let angle = getAngle(yearNumber) else {
+            // Error
             return HitAngle.init(leftAngle: 0, rightAngle: 0)
         }
-        
         return HitAngle.init(leftAngle: angle - 5, rightAngle: angle + 5)
     }
     
-    fileprivate func getAngle(_ year: Int) -> Int {
-        let number = year % 10
-        var _angle: Int = 0
-        switch number {
-        case 4,9:
-            _angle = 75
-            self.baseView.image = UIImage(named: "a")
-            break
-        case 0,5:
-            _angle = 255
-            self.baseView.image = UIImage(named: "c")
-            break
-        case 1,6,3,8:
-            _angle = 165
-            self.baseView.image = UIImage(named: "d")
-            break
-        case 2,7:
-            _angle = 345
-            self.baseView.image = UIImage(named: "b")
-            break
-        default:
-            self.baseView.image = UIImage(named: "non")
-            break
-        }
-        return _angle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupAD()
+        setupLocationManager()
     }
     
-    fileprivate func setupLocationManager() {
+    private func setupAD() {
+        let request = GADRequest()
+        
+        gadTopBannerView.adUnitID = "ca-app-pub-6250716823416917/4507042380"
+        gadTopBannerView.rootViewController = self
+        gadTopBannerView.load(request)
+        
+        gadUnderBannerView.adUnitID = "ca-app-pub-6250716823416917/4764394386"
+        gadUnderBannerView.rootViewController = self
+        gadUnderBannerView.load(request)
+        
+        nadView.isHidden = ADCheckManager.shared.isAdMob
+        nadTopView.isHidden = ADCheckManager.shared.isAdMob
+    }
+    
+    private func setupLocationManager() {
         if CLLocationManager.headingAvailable() {
             self.locationManager.delegate = self
             self.locationManager.headingFilter = kCLHeadingFilterNone
@@ -110,37 +79,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.locationManager.startUpdatingHeading()
         }
     }
-    
-    // MARK: CLLocationManagerDelegate
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        
-        if let _hitAngle = self.checkAngle {
-            let heading = newHeading.magneticHeading
-            
-            UIView.beginAnimations(nil, context: nil)
-            UIView.setAnimationDuration(0.5)
-            self.baseView.transform = CGAffineTransform(rotationAngle: CGFloat(-(M_PI * (heading / 165))))
-            self.saraView.transform = CGAffineTransform(rotationAngle: CGFloat(-(M_PI * (heading / 165))))
-            UIView.commitAnimations()
-            
-            if Double(_hitAngle.leftAngle) < heading && heading < Double(_hitAngle.rightAngle) {
-                showLight(true)
-                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                showParticle(true)
-                return
-            }
+
+    private func getAngle(_ year: Int) -> Int? {
+        let number = year % 10
+        var angle: Int?
+        switch number {
+        case 4,9:
+            angle = 75
+            self.baseView.image = UIImage(named: "a")
+            break
+        case 0,5:
+            angle = 255
+            self.baseView.image = UIImage(named: "c")
+            break
+        case 1,6,3,8:
+            angle = 165
+            self.baseView.image = UIImage(named: "d")
+            break
+        case 2,7:
+            angle = 345
+            self.baseView.image = UIImage(named: "b")
+            break
+        default:
+            self.baseView.image = UIImage(named: "non")
+            break
         }
-        
-        showLight(false)
-        showParticle(false)
-        self.view.backgroundColor = UIColor.white
+        return angle
     }
     
-    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
-        return true
-    }
     
-    fileprivate func showLight(_ on: Bool) {
+    fileprivate func showLight(on: Bool) {
         if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) {
             do {
                 try device.lockForConfiguration()
@@ -167,8 +135,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    // MARK: SpriteKit
-    func showParticle(_ start: Bool) {
+    fileprivate func showParticle(start: Bool) {
         
         if start == false {
             self.skView.isHidden = true
@@ -188,150 +155,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 scene.backgroundColor = UIColor.clear
                 scene.scaleMode = SKSceneScaleMode.aspectFill
                 self.skView.presentScene(scene)
-                
             }
         }
     }
 }
 
-class SpriteScene: SKScene {
-    override func didMove(to view: SKView) {
-        self.backgroundColor = UIColor.clear
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         
-        if self.children.count == 0 {
-            if let path = Bundle.main.path(forResource: "SparkParticle", ofType: "sks") {
-                if let particle = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? SKEmitterNode {
-                    particle.position = CGPoint(x: self.frame.midX, y: self.frame.midX)
-                    self.addChild(particle)
-                }
+        if let _hitAngle = self.checkAngle {
+            let heading = newHeading.magneticHeading
+            
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationDuration(0.5)
+            self.baseView.transform = CGAffineTransform(rotationAngle: CGFloat(-(M_PI * (heading / 165))))
+            self.saraView.transform = CGAffineTransform(rotationAngle: CGFloat(-(M_PI * (heading / 165))))
+            UIView.commitAnimations()
+            
+            if Double(_hitAngle.leftAngle) < heading && heading < Double(_hitAngle.rightAngle) {
+                showLight(on: true)
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                showParticle(start: true)
+                return
             }
         }
+        
+        showLight(on: false)
+        showParticle(start: false)
+        self.view.backgroundColor = UIColor.white
     }
     
-    class func unarchiveFromFile(_ file: String) -> AnyObject? {
-        if let nodePath = Bundle.main.path(forResource: file, ofType: "sks") {
-            var data: Data = Data()
-            do {
-                data = try Data(contentsOf: URL(fileURLWithPath: nodePath), options: NSData.ReadingOptions.mappedIfSafe)
-            }
-            catch _ {
-            }
-            
-            let arch = NSKeyedUnarchiver(forReadingWith: data)
-            arch.setClass(self, forClassName: "SKScene")
-            
-            let scene = arch.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? SKScene
-            arch.finishDecoding()
-            
-            return scene
-        }
-        return nil
-    }
-}
-
-import Accounts
-
-class ActivityManager: NSObject {
-    
-    func getActivityVC(_ vc: ViewController?) -> UIActivityViewController {
-        var yearStr = "今年の"
-        var angleStr = ""
-        var aa = ""
-        let hash = "#恵方こっち #恵方🍣"
-        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-        let date = Date()
-        let comps: DateComponents = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: date)
-        yearStr = String(describing: comps.year) + "年"
-        angleStr = getAngleString(comps.year!) + "\n"
-        
-        let aaangle = (angleStr as NSString).substring(to: 3)
-        aa =
-            //"ﾊﾞｸﾊﾞｸﾑｼｬﾑｼｬ\n" +
-            "　＿＿＿＿　＿_∧_∧\n" +
-            "`｜\(aaangle)｜(三(ﾟ　　)\n" +
-            "　￣ＴＴ￣　￣し　　)\n" +
-            "　　｜｜　　　｜ ○｜\n" +
-        "　　ﾞﾞﾞﾞ　　　 (＿|＿)\n"
-        
-        
-        // 共有する項目
-        let shareText = yearStr + "恵方は" + angleStr + aa + hash
-        let shareWebsite = URL(string: "https://itunes.apple.com/us/app/ehou/id1075817264?l=ja&ls=1&mt=8")!
-        
-        var activityItems = [shareText, shareWebsite] as [Any]
-        if let shareImage = vc?.shareView.getImage() {
-            activityItems.append(shareImage)
-        }
-        
-        // 初期化処理
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        activityVC.popoverPresentationController?.sourceView = vc?.view
-        
-        // 使用しないアクティビティタイプ
-        let excludedActivityTypes = [
-            UIActivityType.saveToCameraRoll,
-            UIActivityType.print
-        ]
-        
-        activityVC.excludedActivityTypes = excludedActivityTypes
-        let completionHandler:UIActivityViewControllerCompletionWithItemsHandler = { (str, isFinish, arr, error) in
-            NADInterstitial.sharedInstance().showAd()
-        }
-        activityVC.completionWithItemsHandler = completionHandler
-        return activityVC
-    }
-    
-    
-    fileprivate func getAngleString(_ year: Int) -> String {
-        let number = year % 10
-        var _angle = ""
-        switch number {
-        case 4,9:
-            _angle = "東北東やや東"
-            break
-        case 0,5:
-            _angle = "西南西やや西"
-            break
-        case 1,6,3,8:
-            _angle = "南南東やや南"
-            break
-        case 2,7:
-            _angle = "北北西やや北"
-            break
-        default:
-            break
-        }
-        return _angle
-    }
-    
-    func showActivityView(_ viewController: ViewController) {
-        weak var vc = viewController
-        vc?.present(getActivityVC(vc), animated: true, completion: nil)
-    }
-}
-
-extension UIView {
-    
-    func getImage() -> UIImage {
-        
-        // キャプチャする範囲を取得.
-        let rect = self.bounds
-        
-        // ビットマップ画像のcontextを作成.
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-        if let context: CGContext = UIGraphicsGetCurrentContext() {
-            
-            // 対象のview内の描画をcontextに複写する.
-            self.layer.render(in: context)
-            
-            // 現在のcontextのビットマップをUIImageとして取得.
-            let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-            
-            // contextを閉じる.
-            UIGraphicsEndImageContext()
-            
-            return capturedImage
-        }
-        return UIImage()
+    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
+        return true
     }
 }

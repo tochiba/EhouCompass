@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579AB5955FBC3E5AECDAB2EC /* Pods_EhouCompass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B701696FADD5DFE1798CB36 /* Pods_EhouCompass.framework */; };
 		77A7C0076F132D9AEEB23754 /* libPods-EhouCompassUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E57B5D0BD6439B8D80456733 /* libPods-EhouCompassUITests.a */; };
 		8F58F2BF1C47DEA800542E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2BE1C47DEA800542E34 /* AppDelegate.swift */; };
 		8F58F2C11C47DEA800542E34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58F2C01C47DEA800542E34 /* ViewController.swift */; };
@@ -20,7 +21,11 @@
 		8F58F2F61C4A177800542E34 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F58F2F41C4A177800542E34 /* spark.png */; };
 		8FC4AE641C50F5C4009535CE /* SpriteScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FC4AE631C50F5C3009535CE /* SpriteScene.sks */; };
 		8FFE9BAEBB428A79C407F94A /* libPods-EhouCompassTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FED905FB276C5E8C3C8820A /* libPods-EhouCompassTests.a */; };
-		EA1A6B0E631E83DA2467AE02 /* libPods-EhouCompass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 324B190D1865100B5C414343 /* libPods-EhouCompass.a */; };
+		DB27D5631E1602F400B2895F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB27D5621E1602F400B2895F /* GoogleService-Info.plist */; };
+		DB27D5651E16432300B2895F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27D5641E16432300B2895F /* ActivityViewController.swift */; };
+		DB27D5671E1643E200B2895F /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27D5661E1643E200B2895F /* SpriteScene.swift */; };
+		DB27D5691E1648E500B2895F /* InterstitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27D5681E1648E500B2895F /* InterstitialController.swift */; };
+		DB27D56B1E16523D00B2895F /* ADCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27D56A1E16523D00B2895F /* ADCheckManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		324B190D1865100B5C414343 /* libPods-EhouCompass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EhouCompass.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B701696FADD5DFE1798CB36 /* Pods_EhouCompass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EhouCompass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED905FB276C5E8C3C8820A /* libPods-EhouCompassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EhouCompassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F58F2BB1C47DEA800542E34 /* EhouCompass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EhouCompass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F58F2BE1C47DEA800542E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +69,11 @@
 		D26BB0ABE2EA6FF25686216A /* Pods-EhouCompass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EhouCompass.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EhouCompass/Pods-EhouCompass.debug.xcconfig"; sourceTree = "<group>"; };
 		DA1A87973F1CC66F7CE4973F /* Pods-EhouCompassUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EhouCompassUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EhouCompassUITests/Pods-EhouCompassUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DB265170031A7891F0FF829F /* Pods-EhouCompassTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EhouCompassTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EhouCompassTests/Pods-EhouCompassTests.release.xcconfig"; sourceTree = "<group>"; };
+		DB27D5621E1602F400B2895F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB27D5641E16432300B2895F /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		DB27D5661E1643E200B2895F /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
+		DB27D5681E1648E500B2895F /* InterstitialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialController.swift; sourceTree = "<group>"; };
+		DB27D56A1E16523D00B2895F /* ADCheckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADCheckManager.swift; sourceTree = "<group>"; };
 		E57B5D0BD6439B8D80456733 /* libPods-EhouCompassUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EhouCompassUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6ABF209AA2D0F2D122A826 /* Pods-EhouCompass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EhouCompass.release.xcconfig"; path = "Pods/Target Support Files/Pods-EhouCompass/Pods-EhouCompass.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F58F2ED1C47E10200542E34 /* CoreLocation.framework in Frameworks */,
-				EA1A6B0E631E83DA2467AE02 /* libPods-EhouCompass.a in Frameworks */,
+				579AB5955FBC3E5AECDAB2EC /* Pods_EhouCompass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +156,11 @@
 				8F58F2F31C4A177800542E34 /* SparkParticle.sks */,
 				8FC4AE631C50F5C3009535CE /* SpriteScene.sks */,
 				8F58F2F41C4A177800542E34 /* spark.png */,
+				DB27D5621E1602F400B2895F /* GoogleService-Info.plist */,
+				DB27D5641E16432300B2895F /* ActivityViewController.swift */,
+				DB27D5661E1643E200B2895F /* SpriteScene.swift */,
+				DB27D5681E1648E500B2895F /* InterstitialController.swift */,
+				DB27D56A1E16523D00B2895F /* ADCheckManager.swift */,
 			);
 			path = EhouCompass;
 			sourceTree = "<group>";
@@ -153,9 +168,9 @@
 		9065608A5E1B857D1E336226 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				324B190D1865100B5C414343 /* libPods-EhouCompass.a */,
 				5FED905FB276C5E8C3C8820A /* libPods-EhouCompassTests.a */,
 				E57B5D0BD6439B8D80456733 /* libPods-EhouCompassUITests.a */,
+				5B701696FADD5DFE1798CB36 /* Pods_EhouCompass.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,6 +254,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = AVWWV46Y77;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 					};
 					8F58F2CE1C47DEA900542E34 = {
 						CreatedOnToolsVersion = 7.2;
@@ -283,6 +299,7 @@
 				8F58F2F51C4A177800542E34 /* SparkParticle.sks in Resources */,
 				8F58F2C61C47DEA800542E34 /* Assets.xcassets in Resources */,
 				8F58F2C41C47DEA800542E34 /* Main.storyboard in Resources */,
+				DB27D5631E1602F400B2895F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,10 +462,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB27D5691E1648E500B2895F /* InterstitialController.swift in Sources */,
 				8F58F2F01C47E80B00542E34 /* Empty.m in Sources */,
 				8F58F2C11C47DEA800542E34 /* ViewController.swift in Sources */,
 				8F58F2BF1C47DEA800542E34 /* AppDelegate.swift in Sources */,
+				DB27D5651E16432300B2895F /* ActivityViewController.swift in Sources */,
+				DB27D56B1E16523D00B2895F /* ADCheckManager.swift in Sources */,
 				8F58F2F21C493C9300542E34 /* SettingViewController.swift in Sources */,
+				DB27D5671E1643E200B2895F /* SpriteScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,8 +618,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Toshiki Chiba (R2U3DJS2ZM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EhouCompass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -616,8 +638,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Toshiki Chiba (AVWWV46Y77)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EhouCompass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toshikichiba.EhouCompass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
