@@ -26,6 +26,7 @@
 		DB27D5671E1643E200B2895F /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27D5661E1643E200B2895F /* SpriteScene.swift */; };
 		DB27D5691E1648E500B2895F /* InterstitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27D5681E1648E500B2895F /* InterstitialController.swift */; };
 		DB27D56B1E16523D00B2895F /* ADCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27D56A1E16523D00B2895F /* ADCheckManager.swift */; };
+		DB42A6591E3C758F00BF32D8 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A6581E3C758F00BF32D8 /* SpeechController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		DB27D5661E1643E200B2895F /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		DB27D5681E1648E500B2895F /* InterstitialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialController.swift; sourceTree = "<group>"; };
 		DB27D56A1E16523D00B2895F /* ADCheckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADCheckManager.swift; sourceTree = "<group>"; };
+		DB42A6581E3C758F00BF32D8 /* SpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		E57B5D0BD6439B8D80456733 /* libPods-EhouCompassUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EhouCompassUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6ABF209AA2D0F2D122A826 /* Pods-EhouCompass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EhouCompass.release.xcconfig"; path = "Pods/Target Support Files/Pods-EhouCompass/Pods-EhouCompass.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				DB27D5661E1643E200B2895F /* SpriteScene.swift */,
 				DB27D5681E1648E500B2895F /* InterstitialController.swift */,
 				DB27D56A1E16523D00B2895F /* ADCheckManager.swift */,
+				DB42A6581E3C758F00BF32D8 /* SpeechController.swift */,
 			);
 			path = EhouCompass;
 			sourceTree = "<group>";
@@ -247,7 +250,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Toshiki Chiba";
 				TargetAttributes = {
 					8F58F2BA1C47DEA800542E34 = {
@@ -467,6 +470,7 @@
 				8F58F2C11C47DEA800542E34 /* ViewController.swift in Sources */,
 				8F58F2BF1C47DEA800542E34 /* AppDelegate.swift in Sources */,
 				DB27D5651E16432300B2895F /* ActivityViewController.swift in Sources */,
+				DB42A6591E3C758F00BF32D8 /* SpeechController.swift in Sources */,
 				DB27D56B1E16523D00B2895F /* ADCheckManager.swift in Sources */,
 				8F58F2F21C493C9300542E34 /* SettingViewController.swift in Sources */,
 				DB27D5671E1643E200B2895F /* SpriteScene.swift in Sources */,
@@ -615,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D26BB0ABE2EA6FF25686216A /* Pods-EhouCompass.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Toshiki Chiba (R2U3DJS2ZM)";
@@ -635,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD6ABF209AA2D0F2D122A826 /* Pods-EhouCompass.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Toshiki Chiba (AVWWV46Y77)";

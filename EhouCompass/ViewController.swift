@@ -52,6 +52,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackgroundColor()
         setupAD()
         setupLocationManager()
     }
@@ -85,19 +86,19 @@ class ViewController: UIViewController {
         var angle: Int?
         switch number {
         case 4,9:
-            angle = 75
+            angle = 70
             self.baseView.image = UIImage(named: "a")
             break
         case 0,5:
-            angle = 255
+            angle = 250
             self.baseView.image = UIImage(named: "c")
             break
         case 1,6,3,8:
-            angle = 165
+            angle = 160
             self.baseView.image = UIImage(named: "d")
             break
         case 2,7:
-            angle = 345
+            angle = 340
             self.baseView.image = UIImage(named: "b")
             break
         default:
@@ -158,6 +159,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    fileprivate func setBackgroundColor() {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "icon-bg")!)
+    }
 }
 
 extension ViewController: CLLocationManagerDelegate {
@@ -172,17 +177,27 @@ extension ViewController: CLLocationManagerDelegate {
             self.saraView.transform = CGAffineTransform(rotationAngle: CGFloat(-(M_PI * (heading / 165))))
             UIView.commitAnimations()
             
+            let bunkiAngle = abs((_hitAngle.leftAngle + 5) - 165)
             if Double(_hitAngle.leftAngle) < heading && heading < Double(_hitAngle.rightAngle) {
+                SpeechController.shared.speech(type: .ehou)
                 showLight(on: true)
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                 showParticle(start: true)
                 return
             }
+            else if Double(bunkiAngle) < heading {
+                SpeechController.shared.speech(type: .right)
+            } else {
+                SpeechController.shared.speech(type: .left)
+            }
+            
         }
         
+//        SpeechController.shared.speech(type: .stop)
         showLight(on: false)
         showParticle(start: false)
-        self.view.backgroundColor = UIColor.white
+        setBackgroundColor()
+//        self.view.backgroundColor = UIColor.white
     }
     
     func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {

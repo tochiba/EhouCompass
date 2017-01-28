@@ -14,10 +14,12 @@ final class ActivityViewController {
         var yearStr = "今年の"
         var angleStr = ""
         var aa = ""
-        let hash = "#恵方こっち #恵方🍣"
+        let hash = "#恵方こっち"
         let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         let comps: DateComponents = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: Date())
-        yearStr = String(describing: comps.year) + "年"
+        if let year = comps.year {
+            yearStr = String(describing: year) + "年の"
+        }
         angleStr = getAngleString(comps.year!) + "\n"
         
         let aaangle = (angleStr as NSString).substring(to: 3)
@@ -35,10 +37,11 @@ final class ActivityViewController {
         let shareWebsite = URL(string: "https://itunes.apple.com/us/app/ehou/id1075817264?l=ja&ls=1&mt=8")!
         
         var activityItems = [shareText, shareWebsite] as [Any]
+        vc?.shareView.backgroundColor = UIColor(patternImage: UIImage(named: "icon-bg")!)
         if let shareImage = vc?.shareView.getImage() {
             activityItems.append(shareImage)
         }
-        
+        vc?.shareView.backgroundColor = UIColor.clear
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = vc?.view
